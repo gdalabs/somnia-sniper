@@ -1,0 +1,32 @@
+{
+  "name": "somnia-sniper",
+  "version": "0.1.0",
+  "description": "Reactive NFT Sniper — instant mispriced NFT detection and sniping using Somnia Reactivity",
+  "author": "GDA Labs",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:marketplace": "hardhat run scripts/deploy-marketplace.ts --network somnia",
+    "deploy:sniper": "hardhat run scripts/deploy-sniper.ts --network somnia",
+    "bot": "tsx bot/index.ts",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.0",
+    "typescript": "^5.5.0",
+    "tsx": "^4.19.0",
+    "vite": "^6.0.0",
+    "@openzeppelin/contracts": "^5.1.0",
+    "@somnia-chain/reactivity-contracts": "latest"
+  },
+  "dependencies": {
+    "@somnia-chain/reactivity": "latest",
+    "viem": "^2.21.0",
+    "dotenv": "^16.4.0"
+  }
+}

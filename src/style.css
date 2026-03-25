@@ -1,0 +1,245 @@
+:root {
+  --bg: #0a0a0f;
+  --surface: #12121a;
+  --border: #1e1e2e;
+  --text: #e0e0e8;
+  --text-dim: #888899;
+  --accent: #00ff88;
+  --accent-dim: #00cc6a;
+  --danger: #ff4466;
+  --warning: #ffaa22;
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+#app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+header h1 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+header .subtitle {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.status-bar {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.status-bar .live {
+  color: var(--accent);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* Stats cards */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.stat-card .label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-dim);
+  margin-bottom: 4px;
+}
+
+.stat-card .value {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.stat-card .value.danger { color: var(--danger); }
+.stat-card .value.warning { color: var(--warning); }
+
+/* Config panel */
+.config {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.config h2 {
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: var(--text-dim);
+}
+
+.config-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.config-row label {
+  font-size: 13px;
+  width: 120px;
+  color: var(--text-dim);
+}
+
+.config-row input {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 6px 10px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 13px;
+  flex: 1;
+}
+
+.config-row input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* Listings feed */
+.feed {
+  margin-bottom: 24px;
+}
+
+.feed h2 {
+  font-size: 14px;
+  color: var(--text-dim);
+  margin-bottom: 12px;
+}
+
+.listing {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.listing.sniped {
+  border-color: var(--accent);
+  background: rgba(0, 255, 136, 0.05);
+}
+
+.listing.missed {
+  border-color: var(--danger);
+  opacity: 0.6;
+}
+
+.listing .info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.listing .nft-id {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.listing .contract {
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+.listing .price {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.listing .price.low { color: var(--accent); }
+.listing .price.normal { color: var(--text-dim); }
+
+.listing .badge {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.badge.sniped {
+  background: rgba(0, 255, 136, 0.15);
+  color: var(--accent);
+}
+
+.badge.watching {
+  background: rgba(255, 170, 34, 0.15);
+  color: var(--warning);
+}
+
+/* Empty state */
+.empty {
+  text-align: center;
+  padding: 48px;
+  color: var(--text-dim);
+  font-size: 14px;
+}
+
+.empty .icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 24px;
+  font-size: 12px;
+  color: var(--text-dim);
+  border-top: 1px solid var(--border);
+}
+
+footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
