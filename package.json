@@ -16,7 +16,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@nomicfoundation/hardhat-toolbox": "^7.0.0",
     "hardhat": "^2.22.0",
     "typescript": "^5.5.0",
     "tsx": "^4.19.0",
