@@ -20,7 +20,7 @@
     "hardhat": "^2.22.0",
     "typescript": "^5.5.0",
     "tsx": "^4.19.0",
-    "vite": "^6.0.0",
+    "vite": "^6.4.2",
     "@openzeppelin/contracts": "^5.1.0",
     "@somnia-chain/reactivity-contracts": "latest"
   },
